@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_send">Send</string>
+    <string name="txt_name">María Camila Villamizar Villamizar</string>
+    <string name="txt_id">U00145617</string>
+    <string name="txt_email">mvillamizar666@unab.edu.co</string>
+    <string name="txt_phone">3505030233</string>
+    <string name="txt_github">newMoonlight11</string>
+    <string name="hint_es">Write something</string>
+</resources>
