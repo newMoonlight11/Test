@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView Tvprincipal;
-
+    private int count = 0;
     private Button suma;
     private Button resta;
     private Button divi;
@@ -101,101 +101,61 @@ public class MainActivity extends AppCompatActivity {
         n0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("0")) {
-                    Tvprincipal.setText("0");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "0");
-                }
+                Tvprincipal.append("0");
             }
         });
         n1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("1")) {
-                    Tvprincipal.setText("1");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "1");
-                }
+                Tvprincipal.append("1");
             }
         });
         n2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("2")) {
-                    Tvprincipal.setText("2");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "2");
-                }
+                Tvprincipal.append("2");
             }
         });
         n3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("3")) {
-                    Tvprincipal.setText("3");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "3");
-                }
+                Tvprincipal.append("3");
             }
         });
         n4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("4")) {
-                    Tvprincipal.setText("4");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "4");
-                }
+                Tvprincipal.append("4");
             }
         });
         n5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("5")) {
-                    Tvprincipal.setText("5");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "5");
-                }
+                Tvprincipal.append("5");
             }
         });
         n6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("6")) {
-                    Tvprincipal.setText("6");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "6");
-                }
+                Tvprincipal.append("6");
             }
         });
         n7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("7")) {
-                    Tvprincipal.setText("7");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "7");
-                }
+                Tvprincipal.append("7");
             }
         });
         n8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("8")) {
-                    Tvprincipal.setText("8");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "8");
-                }
+                Tvprincipal.append("8");
             }
         });
         n9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Tvprincipal.getText().toString().equals("9")) {
-                    Tvprincipal.setText("9");
-                } else {
-                    Tvprincipal.setText(Tvprincipal.getText() + "9");
-                }
+                Tvprincipal.append("9");
             }
         });
         equals1.setOnClickListener(new View.OnClickListener() {
@@ -236,6 +196,28 @@ public class MainActivity extends AppCompatActivity {
                 Tvprincipal.setText(rest + "");
             }
         }
+        switch (op) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                if (num2 == 0) {
+                    String rest = "Ingresa un valor diferente a cero";
+                    Tvprincipal.setText(rest);
+                    return;
+                }
+                result = num1 / num2;
+                break;
+        }
+        String resultStr = Double.toString(result);
+        Tvprincipal.setText(resultStr);
+        op = "";
 
     }
 }
